@@ -1,0 +1,15 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'Selfcare:home' %}"> <button value="Back">Back</button> </a>
+<center>
+  <h2><i><b>S O L I C I T O U S   S E L F</b></i></h2>
+  <h1>Some benevolent time for thyself! </h1>
+  <br><hr><br>
+  {% for i in art %}
+  <button type="button"><a href="{{ i.article }}">{{ i.Name }}</a></button>
+  <br>
+  {% endfor %}
+
+</center>
+{% endblock %}

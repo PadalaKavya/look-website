@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<h3>Edit Wish</h3>
+
+<form method="POST">
+{% csrf_token %}
+
+    {{form}}
+    <input type="submit" name="Edit Wish">
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+{% extends 'newspaperapp/base.html' %}
+{% block main %}
+<br>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+{% for newspaperapp in all_search_results %}
+    <h3><a href="detail/{{newspaperapp.id}}">{{ newspaperapp.title}} - {{newspaperapp.category}}</a></h3>
+{% empty %}
+    <h2>No results found</h2>
+{% endfor %}
+{% endblock %}

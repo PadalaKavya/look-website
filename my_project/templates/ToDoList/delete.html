@@ -1,0 +1,14 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<body bgcolor="#98d6fa">
+<center><p>Are you sure you want to delete {{"item"}}?</p>
+
+<a href="{% url 'ToDoList:list' %}">Cancel?</a>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" name="confirm">
+</form>
+</center>
+</body>
+{% endblock %}

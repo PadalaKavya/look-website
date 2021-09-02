@@ -1,0 +1,13 @@
+{% extends "post/base.html"%}
+{%block body_block %}
+<center><a href="{%url 'post:your_post' %}">Myposts</a>
+<a href="{%url 'post:add_post'%}">create post</a>
+</center>
+<br>
+<hr>
+    {%for post in object_list %}
+        <li><a href="{{post.get_absolute_url}}">{{post.title}}</a>-{{post.author}}<br/></li>
+        <hr>
+    {%endfor%}
+
+  {%endblock%}

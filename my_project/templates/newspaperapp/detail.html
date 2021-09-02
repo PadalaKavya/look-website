@@ -1,0 +1,9 @@
+{% extends 'newspaperapp/base.html' %}
+{% block main %}
+<hr>
+<br>
+<br>
+<h1>{{news.category}} : {{news.title}}</h1>
+    {{news.date_published}}
+    {{news.details|safe}}
+{% endblock %}

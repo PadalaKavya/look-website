@@ -1,0 +1,14 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'Selfcare:intro' %}"> <button value="Back">Back</button> </a>
+<center>
+   <p>Let everything around you not let you stress more.</p>
+   <p>Clear your space before you clear your mind.</p>
+   <p>Put things away in their places.</p>
+   <p>Grab a drink or light a candle.</p>
+      <p> Make yourself comfortable.
+   </p>
+   <a href="{% url 'Selfcare:step2' %}"> <button>Done and Ready?</button></a>
+</center>
+{% endblock %}

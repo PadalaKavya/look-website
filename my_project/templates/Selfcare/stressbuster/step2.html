@@ -1,0 +1,14 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'Selfcare:step1' %}"> <button value="Back">Back</button> </a>
+<center>
+   <p>Let's take  some time out to meditate before you move on to conquer the muddle!</p>
+   <P>#insert 4-7-8video</P>
+   <video width="320" height="240" controls>
+ <source src="E:\sravya\LOOK\4-7-8.rar" type="video/mp4">
+</video>
+   <p>#insert 4-4-4-4 method</p>
+   <a href="{% url 'Selfcare:step3' %}"> <P><button>Calmer and next!</button></P></a>
+</center>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'home' %}"> <button value="Back">Back</button> </a>
+<center>
+<h1>TO DO LIST</h1>
+  <br><hr>
+<form method="POST">
+  {%csrf_token%}
+
+  Task:
+{{form.title}}
+  <br>
+  Deadline:
+  {{ form.Deadline }}
+  <br>
+  Color code it:
+  {{form.color}}
+  <input type="submit" name="Create Task">
+</form>
+<table>
+  <th>Color coded:</th>
+        <th>Update?</th>
+        <th>Delete?</th>
+        <th>Task to tackle</th>
+        <th>Added on</th>
+        <th>Deadline</th>
+
+{%   for task in tasks %}
+   <tr>
+<div>
+
+    <td><font color="{{task.color}}"><b><center>▄▄</center></b></font> </td>
+   <td> <a href="{% url 'ToDoList:update_task' task.id %}">✏️</a></td>
+    <td> <a href="{% url 'ToDoList:delete' task.id %}">🗑️</a></td>
+  <td> {% if task.complete == True %}
+    <strike>{{task}}</strike>
+    {% else %}
+      <span>{{task}}</span></td>
+    <td>{{ task.created }}</td>
+    <td>{{task.Deadline}}</td>
+    {% endif %}
+</div>
+       </tr>
+{% endfor %}
+
+  <br>
+</table>
+
+  </center>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'Selfcare:step2' %}"> <button value="Back">Back</button> </a>
+<center>
+        <form method="POST">
+    {%csrf_token%}
+    <p> What do you think is troubling you?</p>
+            {{form.Problem}}
+    <p>Why?</p>
+            {{form.Why}}
+    <p>What could have been done to avoid it?</p>
+            {{form.Avoid}}
+    <p>You will fix this by:</p>
+            {{form.Fix}}
+
+
+
+    <br><br>
+
+    Cheers to conquering your  obstacles!<br>
+            You're session will be saved!<br>
+        <input type="submit" value="Am all set to conquer the day!">
+            </form>
+</center>
+
+{% endblock %}

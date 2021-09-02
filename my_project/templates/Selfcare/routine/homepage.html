@@ -1,0 +1,17 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'Selfcare:home' %}"> <button value="Back">Back</button> </a>
+<center>
+  <h1> ROUTINE </h1>
+  <br><hr><br>
+ <a href="{% url 'Selfcare:mroutine' %}"><p><button>MORNING</button></p><BR></a>
+  <a href="{% url 'Selfcare:wroutine' %}">    <p><button>WORKOUT</button></p><BR></a>
+  <a href="{% url 'Selfcare:sroutine' %}">      <p><button>STUDY</button></p><BR></a>
+  <a href="{% url 'Selfcare:droutine' %}">   <p><button>DIET</button></p><BR></a>
+  <a href="{% url 'Selfcare:croutine' %}">   <p><button>SKIN CARE</button></p><BR></a>
+  <a href="{% url 'Selfcare:nroutine' %}">  <p><button>NIGHT</button></p><BR></a>
+  <a href="{% url 'Selfcare:xroutine' %}">   <p><button>DETOX</button></p><BR></a>
+</center>
+
+{% endblock %}

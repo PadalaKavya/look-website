@@ -1,0 +1,15 @@
+{% extends 'newspaperapp/base.html' %}
+{% block main %}
+<hr>
+<br>
+<br>
+<form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'newspaperapp:search' %}">
+     <input class="form-control mr-sm-2" type="date" placeholder="Search" aria-label="Search" name="search">
+     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+<hr>
+{% for cat in three_categories %}
+    <img src="{{cat.category_image}}" />
+    <p class="card-text"><a href="category/{{cat.id}}" class="btn btn-sm btn-primary">{{cat.title}}</a></p>
+{% endfor %}
+{% endblock %}

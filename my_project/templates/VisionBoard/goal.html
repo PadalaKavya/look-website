@@ -1,0 +1,29 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'VisionBoard:VisionBoard' %}"> <button value="Back">Back</button> </a>
+<center>
+  <h1>Milestones to accomplish</h1>
+  <form method="POST">
+  {%csrf_token%}
+{{form.media}}
+{{form.milestones}}
+  <input type="submit" name="Add milestones">
+</form>
+  {%   for i in target %}
+<div>
+    <a href="{% url 'VisionBoard:updatemile' i.id %}">Edit</a>
+    <a href="{% url 'VisionBoard:delete' i.id %}">Delete</a>
+
+
+    {% if i.complete == True %}
+    <strike>{{i.milestones|safe }}</strike>
+    {% else %}
+    <span>{{ i.milestones|safe }}</span>
+    {% endif %}
+</div>
+
+{% endfor %}
+
+</center>
+{% endblock %}

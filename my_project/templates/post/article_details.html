@@ -1,0 +1,39 @@
+{% extends "post/base.html"%}
+{%block body_block %}
+  <body>
+    <div class="p2">
+    <div class="card m-auto"">
+      <h1>{{post.title}}</h1>
+        <small>by:{{ post.author.username }}</small><br/>
+        <hr>
+        <br/>
+        <p>{{post.body|safe}}</p>
+      <br/>
+    </div>
+  <!--  <h1>{{post.title}}</h1>
+      <small>by:{{post.author}}</small><br/>
+      <hr>
+      <br/>
+      <p>{{post.body}}</p>
+    <br/>-->
+    <div class="card-footer text-muted">
+      <h2> comments...</h2>
+      {% if not post.comments.all %}
+          no comments yet <a href="{% url 'post:add_comment' post.pk %}">
+            addone</a>
+      {% else %}
+      <a href="{% url 'post:add_comment' post.pk %}">add comment</a>
+      <br>
+          {% for comment in post.comments.all %}
+             <strong>{{comment.author}} -
+            {{comment.date_added}}
+            </strong>
+             <br/>
+            {{comment.body}}
+            {% endfor %}
+          {% endif %}
+    </div>
+
+
+  </body>
+  {%endblock%}

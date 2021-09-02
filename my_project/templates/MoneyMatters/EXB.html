@@ -1,0 +1,20 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'MoneyMatters:home' %}"> <button value="Back">Back</button> </a>
+<center>
+    <h1 ><B>EXPENSES/BILLS</B></h1>
+    <br><hr><br>
+    <form method="POST">
+        {% csrf_token %}
+        {{ eform.as_p }}
+
+        <input type="submit" value="Add!">
+
+    </form>
+<p>Your expenses gets deducted from your wallet</p>
+    <p>Check your your wallet</p>
+    <a href="{% url 'MoneyMatters:Income' %}"><button type="button">Check out your wallet</button></a>
+
+</center>
+{%endblock%}

@@ -1,0 +1,27 @@
+{% extends "debateapp/base.html" %}
+{% block title %}Debatepage{% endblock %}
+{% block main %}
+<br>
+<br>
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Available Polls</h3>
+            </div>
+
+                {% for poll in polls %}
+                <li>
+                    <strong>{{ poll.question }}</strong>
+                    <span class="pull-right">
+                        <a href="{% url 'debateapp:vote' poll.id %}" class="btn btn-info btn-xs">Vote</a> &nbsp;
+                        <a href="{% url 'debateapp:results' poll.id %}" class="btn btn-default btn-xs">View Results</a> &nbsp;
+                    </span>
+                </li>
+                <hr>
+                {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

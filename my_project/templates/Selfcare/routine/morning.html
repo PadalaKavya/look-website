@@ -1,0 +1,23 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'Selfcare:routine' %}"> <button value="Back">Back</button> </a>
+<center>
+  <h1>MORNING ROUTINE</h1>
+  <br><hr><br>
+       <style>
+   div{
+border: 1px solid black;
+ }
+</style>
+
+
+{%   for task in tasks %}
+
+<div>
+   <a href="{% url 'Selfcare:medit' task.id %}"><p>Edit🖊<p></a>
+   {{task|safe}}
+</div>
+{% endfor %}
+</center>
+{% endblock %}

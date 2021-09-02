@@ -1,0 +1,26 @@
+{% extends "basicapp/base.html" %}
+{% load static %}
+{% block body_block %}
+
+<br>
+<hr>
+
+  <h1>login</h1>
+  <br>
+   <center>
+   <div class="loginbox">
+  <form   action="{% url 'basicapp:user_login' %}" method="POST">
+    {%csrf_token%}
+    <label for="username">email:</label>
+    <input type="usename" name="username">
+    <br>
+    <br>
+    <label for="password">password:</label>
+    <input type="password" name="password">
+    <br>
+    <br>
+    <input type="submit" value="login">
+  </form>
+  </div>
+  </center>
+{%endblock%}

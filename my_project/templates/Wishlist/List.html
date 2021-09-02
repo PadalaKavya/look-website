@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wishlist</title>
+</head>
+<body>
+  <a href="{% url 'Wishlist:index' %}"> <button value="Back">Back</button> </a>
+<center>
+    <h1><b> W I S H L I S T</b></h1>
+    <p><i>All you've wanted!</i></p>
+    <hr>
+    <br>
+    {% for li in wishes %}
+
+        <ul>
+            <li><b>{{ li.wish }}</b></li>
+<p><i>{{ li.catagory }}</i></p>
+            <p>{{ li.date }}</p>
+            <a href="{% url 'Wishlist:Edit' li.id %}">Edit Wish</a>
+            <a href="{% url 'Wishlist:Delete' li.id %}">Delete this?</a>
+
+
+
+        </ul>
+        <br>
+
+
+    {% endfor %}
+
+</center>
+</body>
+</html>

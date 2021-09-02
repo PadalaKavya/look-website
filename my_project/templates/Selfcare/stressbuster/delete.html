@@ -1,0 +1,13 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<center><p>Are you sure you want to don't want to save this session?</p>
+
+<a href="{% url 'Selfcare:stressbuster' %}">Cancel?</a>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" name="confirm">
+</form>
+</center>
+
+{% endblock %}

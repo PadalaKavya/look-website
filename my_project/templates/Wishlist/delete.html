@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete this?</title>
+</head>
+<body>
+<center>
+<p> Are you sure you want to delete this
+   <B>{{note}} </B> ?</p>
+    <a href="{% url 'Wishlist:list' %}">Cancel</a>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <input type="submit" name="confirm" value="Delete">
+</form>
+</center>
+</body>
+</html>

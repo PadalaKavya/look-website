@@ -1,0 +1,11 @@
+{% extends 'newspaperapp/base.html' %}
+{% block main %}
+<hr>
+<br>
+<br>
+<h3>{{category.title}}</h3>
+ {%for news in all_news %}
+	        <h5>{{news.category}}</h5>
+	        <p class="card-text"><a href="/newspaperapp/results/detail/{{news.id}}">{{news.title}}</a></p>
+    {% endfor %}
+{%endblock%}

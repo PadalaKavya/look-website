@@ -1,0 +1,12 @@
+{% extends "post/base.html"%}
+{%block body_block %}
+<hr>
+<br>
+<br>
+<h3>add comment</h3>
+<form method="POST">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="button" class="btn btn-dark">add comment</button>
+</form>
+{%endblock%}

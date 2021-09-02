@@ -1,0 +1,38 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'MoneyMatters:home' %}"> <button value="Back">Back</button> </a>
+<center>
+    <h1>DEBTS TO BE CLEARED</h1>
+    <br><hr><br>
+     <form method="POST">
+        {% csrf_token %}
+        {{ dform.as_p }}
+
+        <input type="submit" value="Add!">
+
+    </form>
+    <b><h1>Total debts to be cleared: {{ total }}</h1></b>
+<table>
+    <center>
+    <thead>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Amount</th>
+    <th>Due</th>
+{% for i in debt %}
+    <tbody>
+    <td>{{ i.date }}</td>
+    <td>{{ i.title }}</td>
+    <td>{{ i.amount }}</td>
+    <td>{{ i.due }}</td>
+    <td><a href="{% url 'MoneyMatters:DDelete' pk=i.id %}">Delete</a></td>
+    </tbody>
+        {% endfor %}
+    </thead>
+    </center>
+</table>
+
+</center>
+</body>
+{%endblock%}

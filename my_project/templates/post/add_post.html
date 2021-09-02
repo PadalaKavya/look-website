@@ -1,0 +1,12 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+<br>
+<h3>add post</h3>
+<form method="POST">
+  {% csrf_token %}
+  {{form.media}}
+  {{form.as_p}}
+  <button class="btn btn-dark">post</button>
+</form>
+
+{%endblock%}

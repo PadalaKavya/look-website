@@ -1,0 +1,13 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<h3>Update Notes</h3>
+
+<form method="POST">
+{% csrf_token %}
+
+    {{form.media}}
+    {{form}}
+    <input type="submit" name="Update Notes">
+</form>
+{% endblock %}

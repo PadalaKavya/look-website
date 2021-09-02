@@ -1,0 +1,12 @@
+
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<h1>Some benevolent time for thyself! </h1>
+<br><hr><br>
+{% for i in tasks %}
+<p>{{ i.tasks }}</p>
+
+<br>
+{% endfor %}
+{% endblock %}

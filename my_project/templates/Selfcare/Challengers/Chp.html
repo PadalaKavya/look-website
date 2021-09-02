@@ -1,0 +1,15 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'Selfcare:home' %}"> <button value="Back">Back</button> </a>
+<center>
+
+  <h2><i><b>C H A L L E N G E R S</b></i></h2>
+  <h1>A 21 DAY CHALLENGE ZONE! </h1>
+  <br><hr><br>
+  {% for i in chal %}
+  <button type="button"><a href="{% url 'Selfcare:tasks' i.id %}">{{ i.Challenge }}</a></button>
+  <br>
+  {% endfor %}
+</center>
+{% endblock %}

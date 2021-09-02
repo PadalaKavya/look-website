@@ -1,0 +1,37 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'MoneyMatters:home' %}"> <button value="Back">Back</button> </a>
+<center>
+    <h1 ><B>S A V I N G S</B></h1>
+    <br><hr><br>
+    <form method="POST">
+        {% csrf_token %}
+        {{ gform.as_p }}
+
+        <input type="submit" value="Add!">
+
+    </form>
+    <b><h1>Total amount saved!: {{ total }}</h1></b>
+<table>
+    <center>
+    <thead>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Amount</th>
+{% for i in goal %}
+    <tbody>
+    <td>{{ i.date }}</td>
+    <td>{{ i.title }}</td>
+    <td>{{ i.amount }}</td>
+    <td><a href="{% url 'MoneyMatters:Delete' pk=i.id %}">Delete</a></td>
+    </tbody>
+        {% endfor %}
+    </thead>
+    </center>
+</table>
+
+
+
+</center>
+{%endblock%}

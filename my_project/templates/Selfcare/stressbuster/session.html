@@ -1,0 +1,25 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'Selfcare:stressbuster' %}"> <button value="Back">Back</button> </a>
+<h1>PREVIOUS SESSIONS</h1>
+   <style>
+    div{
+ border: 1px solid black;
+  }
+</style>
+{%   for task in tasks %}
+ <div>
+<center>
+     <p><a href="{% url 'Selfcare:delete' task.id %}">Delete</a>  <b>{{task.Problem}}</b></p>
+     <p>Cause: {{task.Why}}</p>
+     <p>Could be avoided by: {{task.Avoid}}</p>
+     <p>I'll fix it by: {{task.Fix}}</p>
+</center>
+
+ </div>
+
+{% endfor %}
+
+
+{% endblock %}

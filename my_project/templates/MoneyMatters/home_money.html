@@ -1,0 +1,18 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'home' %}"> <button value="Back">Back</button> </a>
+<center>
+   <br>
+<H1>Money Matters</H1>
+<H2>Time to settle your accounts!</H2>
+<BR>
+<hr>
+<br>
+<a href="{% url 'MoneyMatters:Income' %}"><button type="button">IN YOUR WALLET</button></a>
+<a href="{% url 'MoneyMatters:Expenses' %}"><button type="button">EXPENSES/BILLS</button></a>
+<a href="{% url 'MoneyMatters:MTG' %}"><button type="button">MONEY TO GET</button></a>
+<a href="{% url 'MoneyMatters:Debts' %}"><button type="button">DEBTS</button></a>
+<a href="{% url 'MoneyMatters:Savings' %}"><button type="button">SAVINGS</button></a>
+</center>
+{%endblock%}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Care</title>
+</head>
+<body>
+  <a href="{% url 'Wishlist:index' %}"> <button value="Back">Back</button> </a>
+       <h1>HEALTH CARE </h1>
+<br>
+<hr>
+<br>
+    {% for stat in stat %}
+    <ul>
+
+        <li>{{stat.wish}}</li>
+        <p>{{stat.date}}</p>
+                <a href="{% url 'Wishlist:Delete' stat.id %}">Delete this?</a>
+
+    </ul>
+
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<br>
+<br>
+<a href="{%url 'newspaperapp:home'%}"><img src="{% static 'images/newspaper_logo.jpeg' %}" /></a>
+<div class="text_block"><h4>nature</h4><p>what</p></div>
+<br>
+<br>
+<br>
+<br>
+  <a href="{%url 'debateapp:home' %}"><img src="{% static 'images/debate_logo.jpeg' %}" /></a>
+  <div class="text_block"><h4>nature</h4><p>what</p></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <a href="{%url 'post:home2' %}"><img src="{% static 'images/Talkative_logo.jpeg' %}" /></a>
+  <div class="text_block"><h4>nature</h4><p>what</p></div>
+
+  <style>
+  img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+</style>
+{%endblock%}

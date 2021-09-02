@@ -1,0 +1,47 @@
+{% extends "basicapp/base.html" %}
+{% load static %}
+{% block body_block %}
+<style>
+  h1
+  {
+    margin: 0;
+    padding:0 0 20px;
+    text-align:center;
+    font-size:22px;
+    color: black;
+    font-family: verdana;
+  }
+  form
+  {
+         height:50%;
+        border: 3px solid #f1f1f1;
+        width:50%;
+        
+    }
+    input[type=submit]
+    {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+</style>
+<br>
+<hr>
+<center>
+  {% if registered %}
+     <a href="{%url 'first_app:index' %}"></a>
+  {% else %}
+     <h1>register here </h1>
+     <form  enctype="multipart/form-data " method="post">
+       {% csrf_token %}
+       {{ user_form.as_p}}
+       <input type="submit" name="" value="Register">
+     </form>
+  {% endif %}
+</center>
+{% endblock %}

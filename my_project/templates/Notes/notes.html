@@ -1,0 +1,41 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'home' %}"> <button value="Back">Back</button> </a>
+<center>
+   <h1>NOTE BOX!</h1>
+<h2>Make a quick note our thoughts!</h2>
+
+<p align="right"><button type="button">Whats this?</button> </p>
+   <hr>
+   <br>
+   <form method="POST">
+       {% csrf_token %}
+       {{ form.media }}
+       {{ form.as_p }}
+
+       <input type="submit" value="Add!">
+
+   </form>
+    <style>
+    div{
+ border: 1px solid black;
+  }
+</style>
+
+   {% for note in notes %}
+
+       <div>
+           <br>
+           <p>{{ note.text|safe }}</p>
+           <p>{{ note.date }}</p>
+           <a href="{% url 'Notes:update' note.id %}">Edit Note</a>
+           <a href="{% url 'Notes:delete' note.id %}">Delete</a>
+           <br>
+
+       </div>
+       <br>
+   {% endfor %}
+
+   </center>
+{% endblock %}

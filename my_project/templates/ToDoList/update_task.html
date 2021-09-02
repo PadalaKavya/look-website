@@ -1,0 +1,16 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<body bgcolor="pink">
+<center>
+<h3>Update Task</h3>
+
+<form method="POST">
+{% csrf_token %}
+
+    {{form}}
+    <input type="submit" name="Update Task">
+</form>
+    </center>
+</body>
+{% endblock %}

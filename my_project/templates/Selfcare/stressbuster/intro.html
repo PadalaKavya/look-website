@@ -1,0 +1,12 @@
+{% extends "basicapp/base.html"%}
+{%block body_block %}
+{% load static %}
+<a href="{% url 'Selfcare:stressbuster' %}"> <button value="Back">Back</button> </a>
+<center>
+  <p> Its time to de stress and get going!</p>
+  <br>
+  <a href="{% url 'Selfcare:step1' %}"> <center><button>To De Stress</button></center></a>
+
+</center>
+{% endblock %}
+<!DOCTYPE html>
